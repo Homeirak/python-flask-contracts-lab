@@ -11,6 +11,8 @@ customers = ["bob","bill","john","sarah"]
 
 app = Flask(__name__)
 
+# Route: GET /contract/<id>
+# Returns contract information if ID is found, else 404
 @app.route('/contract/<int:id>', methods=['GET'])
 def get_contract(id):
     for contract in contracts:
@@ -21,6 +23,8 @@ def get_contract(id):
             # return jsonify(contract), 200
     return make_response({"error":"Contract not found"}, 404)
 
+# Route: GET /customer/<customer_name>
+# Returns 204 if customer exists (no data returned), else 404
 @app.route('/customer/<string:customer_name>', methods=['GET'])
 def get_customer(customer_name):
     if customer_name.lower() in customers:
