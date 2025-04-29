@@ -6,5 +6,9 @@ contracts = [{"id": 1, "contract_information": "This contract is for John and bu
 customers = ["bob","bill","john","sarah"]
 app = Flask(__name__)
 
+
+
+
+
 if __name__ == '__main__':
     app.run(port=5555, debug=True)
